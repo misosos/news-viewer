@@ -1,5 +1,4 @@
-import NewsList from "./components/NewsList";
-import {Route,Routes,useParams} from "react-router";
+import {Route,Routes} from "react-router";
 import NewsPage from "./components/NewsPage"
 
 export default function App() {

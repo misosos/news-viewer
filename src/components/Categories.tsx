@@ -1,5 +1,5 @@
 import {NavLink} from "react-router";
-import styles from "./Categories.module.css";
+import styles from "../styles/Categories.module.css";
 import type {Category} from "../types/news";
 
 export default function Categories()  {

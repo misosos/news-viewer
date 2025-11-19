@@ -1,4 +1,4 @@
-import styles from "./NewsItem.module.css";
+import styles from "../styles/NewsItem.module.css";
 
 export default function NewsItem({article,}: {
     article: {
