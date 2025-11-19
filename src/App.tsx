@@ -1,5 +1,12 @@
 import NewsList from "./components/NewsList";
+import {Route,Routes,useParams} from "react-router";
+import NewsPage from "./components/NewsPage"
 
 export default function App() {
-    return <NewsList />;
+    return(
+        <Routes>
+            <Route path="/" element={<NewsPage/>}/>
+            <Route path="/:category" element={<NewsPage />} />
+        </Routes>
+    )
 }

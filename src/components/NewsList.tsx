@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import styles from "./NewsList.module.css";
 import NewsItem from "./NewsItem";
 import axios from "axios";
-import type {Article} from "../types/article";
 
 export default function NewsList() {
     const [articles, setArticles] = useState(null);
