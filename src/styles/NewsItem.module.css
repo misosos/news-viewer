@@ -1,0 +1,104 @@
+/* 개별 뉴스 카드 컨테이너
+   Tailwind 기준: flex gap-4 p-4 border rounded-lg bg-white shadow-sm hover:shadow-md transition
+*/
+.newsItem {
+    display: flex;
+    gap: 1rem; /* gap-4 */
+    padding: 1rem; /* p-4 */
+    border-radius: 0.75rem; /* rounded-lg */
+    border: 1px solid rgb(252, 231, 243); /* 연한 핑크 보더 */
+    background-color: #fff5f7; /* 아주 연한 핑크 배경 */
+    box-shadow: 0 1px 3px rgba(244, 114, 182, 0.15); /* 은은한 핑크 그림자 */
+    transition:
+        box-shadow 150ms ease,
+        transform 150ms ease,
+        border-color 150ms ease,
+        background-color 150ms ease;
+}
+
+.newsItem:hover {
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35); /* 핑크 톤 hover 그림자 */
+    transform: translateY(-2px);
+    border-color: rgb(244, 114, 182);
+    background-color: rgb(255, 228, 235);
+}
+
+/* 썸네일 영역
+   Tailwind 기준: w-40 h-28 flex-shrink-0 rounded-md overflow-hidden bg-slate-100
+*/
+.thumbnail {
+    width: 10rem; /* w-40 */
+    height: 7rem; /* h-28 */
+    flex-shrink: 0;
+    border-radius: 0.5rem; /* rounded-md */
+    overflow: hidden;
+    background-color: rgb(255, 228, 235); /* 연한 핑크 배경 */
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 텍스트 콘텐츠 영역
+   Tailwind 기준: flex flex-col gap-1 flex-1
+*/
+.contents {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* gap-1 */
+    flex: 1 1 auto;
+    min-width: 0; /* text ellipsis 대비 */
+}
+
+/* 제목 링크 영역
+   Tailwind 기준: text-base sm:text-lg font-semibold text-slate-900 hover:text-blue-600
+*/
+.contents h2 {
+    margin: 0;
+    font-size: 1rem; /* text-base */
+    line-height: 1.5rem;
+    font-weight: 600; /* font-semibold */
+    color: rgb(159, 18, 57); /* 딥 로즈 핑크, 제목 기본색 */
+}
+
+.contents h2 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 150ms ease;
+}
+
+.contents h2 a:hover {
+    color: rgb(219, 39, 119); /* 핑크 hover 색 */
+}
+
+/* 설명 텍스트
+   Tailwind 기준: text-sm text-slate-600 line-clamp-3 (여기선 ellipsis로 근접 구현)
+*/
+.contents p {
+    margin: 0.25rem 0 0; /* mt-1 */
+    font-size: 0.875rem; /* text-sm */
+    line-height: 1.4;
+    color: rgb(190, 24, 93); /* 조금 더 따뜻한 핑크 톤 텍스트 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3줄 자르기 */
+    -webkit-box-orient: vertical;
+}
+
+/* 반응형 - 모바일에서 세로 레이아웃
+   Tailwind 기준: max-sm:flex-col max-sm:h-auto
+*/
+@media (max-width: 640px) {
+    .newsItem {
+        flex-direction: column;
+    }
+
+    .thumbnail {
+        width: 100%;
+        height: 10rem;
+    }
+}

@@ -1,0 +1,53 @@
+/* 뉴스 리스트 전체 래퍼
+   Tailwind 기준: max-w-4xl mx-auto px-4 py-6 space-y-4
+*/
+.newsListBlock {
+    max-width: 56rem; /* max-w-4xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto;
+    padding: 1.5rem 1rem; /* py-6 px-4 */
+    background-color: #fff5f7; /* very light pink background */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 느낌 */
+    color: rgb(159, 18, 57); /* deep rose text */
+    font-size: 0.95rem;
+}
+
+/* 로딩/상태 메시지 전용 스타일 (newsListBlock 재사용) */
+.newsListBlock::before {
+    /* 필요하면 아이콘 넣고 싶을 때 사용, 현재는 비워둠 */
+}
+
+/* 실제 뉴스 카드 리스트 영역
+   Tailwind 기준: max-w-4xl mx-auto px-4 py-6 flex flex-col gap-4
+*/
+.newsList {
+    max-width: 56rem; /* max-w-4xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto;
+    padding: 1.5rem 1rem; /* py-6 px-4 */
+    background-color: #fff5f7; /* match list wrapper pink background */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* gap-4 */
+}
+
+/* 리스트가 비었을 때를 대비한 헬퍼 클래스 (선택 사항)
+   사용하면: <div className={styles.emptyState}>...</div>
+   Tailwind 기준: text-center text-slate-500 text-sm py-8
+*/
+.emptyState {
+    text-align: center;
+    color: rgb(244, 114, 182); /* soft pink for empty state */
+    font-size: 0.875rem; /* text-sm */
+    padding: 2rem 0; /* py-8 */
+}
+
+/* 반응형: 모바일에서 좌우 여백 조금 줄이기 */
+@media (max-width: 640px) {
+    .newsListBlock,
+    .newsList {
+        padding-inline: 0.75rem;
+    }
+}
