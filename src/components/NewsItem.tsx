@@ -1,13 +1,7 @@
 import styles from "../styles/NewsItem.module.css";
+import type {Article} from "../types/news";
 
-export default function NewsItem({article,}: {
-    article: {
-        title: string;
-        description: string;
-        url: string;
-        urlToImage: string;
-    };
-}) {
+export default function NewsItem({article,}: {article: Article}) {
     const { title, description, url, urlToImage } = article;
     return (
         <div className={styles.newsItem}>

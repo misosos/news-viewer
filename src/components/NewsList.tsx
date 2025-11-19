@@ -8,8 +8,9 @@ export default function NewsList({ currentCategory }: NewsListProps) {
     const [articles, setArticles] = useState<Article[] | null>(null);
     const [loading, setLoading] = useState(false);
 
-    const baseUrl = currentCategory == 'all' ? 'https://newsapi.org/v2/top-headlines?country=us&apiKey=b0df57077b934fdfa647691c2804ab91' :
-        `https://newsapi.org/v2/top-headlines?country=us&category=${currentCategory}&apiKey=b0df57077b934fdfa647691c2804ab91`;
+    const baseUrl = currentCategory == 'all'
+        ? 'https://newsapi.org/v2/top-headlines?country=us&apiKey=b0df57077b934fdfa647691c2804ab91'
+        : `https://newsapi.org/v2/top-headlines?country=us&category=${currentCategory}&apiKey=b0df57077b934fdfa647691c2804ab91`;
 
     useEffect(() => {
         const fetchData = async () => {
